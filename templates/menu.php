@@ -31,13 +31,7 @@
 
         </div>
     </li>
-   <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Documentos</a>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Atestado Médico</a>
-            <a class="dropdown-item" href="#">Receita Médica</a>
-    </li>
-	-->
+  
     <li class="nav-item">
         <a class="nav-link " href="../relatorios/index.php" role="button" aria-haspopup="true" aria-expanded="false">Relatório</a>
 

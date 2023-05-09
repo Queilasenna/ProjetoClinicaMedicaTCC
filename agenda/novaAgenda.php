@@ -1,5 +1,5 @@
 <?php
-	require '../conexao.php';
+require '../conexao.php';
 ?>
 
 <!DOCTYPE html>
@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Tela Inicial</title>
     <style>
-        .bloco{
+        .bloco {
             width: 500px;
             margin: 0 auto;
 
-        }        
+        }
 
         .background {
             width: 100vw;
@@ -35,11 +35,9 @@
             margin-right: 40px;
         }
 
-        h1{
-            text-align: center;           
+        h1 {
+            text-align: center;
         }
-       
-   
     </style>
 </head>
 
@@ -56,88 +54,98 @@
 
     <br>
     <div class="bloco">
-    <div class="row">
-       
-        <div class="col">
-            <form action="processaAgenda.php" method="POST">
-                
-                <div class="form-group">
-                    <label for="medico">Médico:</label>
-                    <select class="form-control" id="medico" name="medico_id">
-                        <option value="" disabled selected>Selecione o médico</option>
+        <div class="row">
 
-                        <?php
+            <div class="col">
+                <form action="processaAgenda.php" method="POST">
+
+                    <div class="form-group">
+                        <label for="medico">Médico:</label>
+                        <select class="form-control" id="medico" name="medico_id">
+                            <option value="" disabled selected>Selecione o médico</option>
+
+                            <?php
                             $medicos = retornaDados('SELECT * FROM medicos');
 
                             foreach ($medicos as $medico) {  ?>
                                 <option value="<?= $medico['id'] ?>"><?= $medico['nome'] ?></option>
                             <?php } ?>
-                    </select>
-                </div>
-                                   
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Especialidade</label>
-<input type="Text" class="form-control" id="exampleInputEmail1"  name="especialidade_id">
-                </div>
+                        </select>
+                    </div>
+    <!-- ROLO DA ESPECIALIDADE PARA RESOLVER. CRIAR UM BANCO PRA ESPECIALIDADE ??? -->
+                    <div class="form-group">
+                        <label for="Especialidade">Especialidade</label>
+                        <select class="form-control" id="especialidade" name="especialidade">
+                            <option value="" disabled selected></option>
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Mês</label>
-                    <input type="month" name="mes" class="form-control">
-                </div>
+                            <?php
+                            $medicos = retornaDados('SELECT * FROM medicos');
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Vagas</label>
-                    <input type="Text" class="form-control" id="exampleInputEmail1"  name="vagas">
-                </div>
+                            foreach ($medicos as $especialidade) {  ?>
+                                <option value=""><?= $medicos['especialidade'] ?></option>
+                            <?php } ?>
+                        </select>
+                        <!-- <input type="Text" class="form-control" id="exampleInputEmail1" name="especialidade_id"> -->
+                    </div>
 
-                <div class="form-group">
-                    <label for="">Dias da semana de atendimento: </label>
-                    
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="0">  
-                            <label for = "diaSemanaNews">Dom</label>
-                        </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Mês</label>
+                        <input type="month" name="mes" class="form-control">
+                    </div>
 
-                        <div>
-                            <input type="checkbox" id="subscribeNews" name="diaSemana[]" value="1">
-                            <label for="diaSemanaNews">Seg</label>
-                        </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Vagas</label>
+                        <input type="Text" class="form-control" id="exampleInputEmail1" name="vagas">
+                    </div>
 
-                        <div>
-                            <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="2">  
-                            <label for="diaSemanaNews">Ter</label>
-                        </div>
+                    <div class="form-group">
+                        <label for="">Dias da semana de atendimento: </label>
 
-                        <div>
-                            <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="3"> 
-                            <label for="diaSemanaNews">Qua</label>
-                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="0">
+                                <label for="diaSemanaNews">Dom</label>
+                            </div>
 
-                        <div>
-                            <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="4">  
-                            <label for="diaSemanaNews">Qui</label>
-                        </div>
+                            <div>
+                                <input type="checkbox" id="subscribeNews" name="diaSemana[]" value="1">
+                                <label for="diaSemanaNews">Seg</label>
+                            </div>
 
-                        <div>
-                            <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="5">  
-                            <label for="diaSemanaNews">Sex</label>
-                        </div>
+                            <div>
+                                <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="2">
+                                <label for="diaSemanaNews">Ter</label>
+                            </div>
 
-                        <div>
-                            <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="6">  
-                            <label for = "diaSemanaNews">Sab</label>
+                            <div>
+                                <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="3">
+                                <label for="diaSemanaNews">Qua</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="4">
+                                <label for="diaSemanaNews">Qui</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="5">
+                                <label for="diaSemanaNews">Sex</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="diaSemanaNews" name="diaSemana[]" value="6">
+                                <label for="diaSemanaNews">Sab</label>
+                            </div>
                         </div>
                     </div>
-                </div>
                     <button type="submit" class="btn btn-primary">Criar</button>
                     <a href='index.php'>
-                    <button type="button" class="btn btn-secondary">Voltar</button>
-            </form>
+                        <button type="button" class="btn btn-secondary">Voltar</button>
+                </form>
+            </div>
+
+
         </div>
-      
-        
-    </div>
     </div>
 </body>
 

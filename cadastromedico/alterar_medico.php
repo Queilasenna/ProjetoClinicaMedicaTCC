@@ -60,6 +60,9 @@ session_start();
     $id = $item['id'];
     $nome = $item['nome'];
     $datanasc = $item['nascimento'];
+    //echo $datanasc . "<br>";
+    //echo date("d/m/Y",strtotime($datanasc));
+    //$datanasc = date("d/m/Y",strtotime($datanasc));
     $cpf =  $item['cpf'];
     $email =  $item['email'];
     $telefone =  $item['telefone'];
@@ -73,14 +76,6 @@ session_start();
     $estado =  $item['estado'];
     $cep =  $item['cep'];
 
-    /*
-    $datanasc = strtotime($datanasc); 
-    $datanascatual = date('d/m/Y', $datanasc);
-    echo  $datanascatual;
-
-    $dataFormatada = date("**Y-m-d**", strtotime($datanasc));
-    echo  $datanascatual;
-*/
 
 switch ($estado) {
   case $estado == "AC":
@@ -181,7 +176,7 @@ switch ($estado) {
       </div>
       <div class="form-group col-md-4">
         <label for="datanasc">Data de Nascimento</label>
-        <input type="date" class="form-control" id="datanasc" name="datanasc" placeholder="" value=" <?php echo $datanasc ?>">
+        <input type="date" class="form-control" id="datanasc" name="datanasc" placeholder="" value=" <?php echo date("d.m.Y"); ?>">
       </div>
       <div class="form-group col-md-3">
         <label for="cpf">CPF</label>
@@ -273,8 +268,13 @@ switch ($estado) {
       <div class="form-group col-md-6">
         <label for="inputEstado">Estado</label>
         <select id="estado" name="estado" class="form-control">
-        <option value="<?php echo $estado ?> "> </option> 
-          <option selected>Escolher...</option>
+        <?php
+          if (!empty($estado)) {
+            echo '<option value="'.$estado.'">'.$descEstado.'</option>';
+          } else {
+            echo '<option selected>Escolher...</option>';
+          }          
+        ?>
           <option value="AC">Acre</option>
           <option value="AL">Alagoas</option>
           <option value="AP">Amapá</option>

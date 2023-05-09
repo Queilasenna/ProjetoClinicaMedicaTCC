@@ -71,14 +71,7 @@ session_start();
     $estado =  $item['estado'];
     $cep =  $item['cep'];
 
-    /*
-    $datanasc = strtotime($datanasc); 
-    $datanascatual = date('d/m/Y', $datanasc);
-    echo  $datanascatual;
 
-    $dataFormatada = date("**Y-m-d**", strtotime($datanasc));
-    echo  $datanascatual;
-*/
 
    switch ($estado) {
     case $estado == "AC":
@@ -231,8 +224,13 @@ session_start();
       <div class="form-group col-md-6">
         <label for="inputEstado">Estado</label>
         <select id="estado" name="estado" class="form-control">
-          <option value="<?php echo $estado ?> "> <?php echo $descEstado ?></option>
-          <option selected>Escolher...</option>
+            <?php
+          if (!empty($estado)) {
+            echo '<option value="'.$estado.'">'.$descEstado.'</option>';
+          } else {
+            echo '<option selected>Escolher...</option>';
+          }          
+        ?>
           <option value="AC">Acre</option>
           <option value="AL">Alagoas</option>
           <option value="AP">Amapá</option>

@@ -7,7 +7,14 @@ require '../vendor/autoload.php';
 include_once '../../conexao.php';
 
 // QUERY para recuperar os registros do banco de dados
-$query_usuarios = "SELECT id, paciente_id, medico_id FROM eventos";
+$query_usuarios =   "SELECT eventos.id id, 
+                            medicos.nome Medico,
+                            pacientes.nome Paciente
+                       FROM eventos eventos,
+                            medicos medicos,
+                            pacientes pacientes
+                      WHERE eventos.medico_id = medicos.id
+                        and eventos.paciente_id = pacientes.id";
 
 // Prepara a QUERY
 $result_usuarios = $pdo->prepare($query_usuarios);
@@ -29,10 +36,10 @@ $dados .= "<h1>Pacientes Agendados</h1>";
 // Ler os registros retornado do BD
 while($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)){
     //var_dump($row_usuario);
-    extract($row_usuario);
-    $dados .= "ID: $id <br>";
-    $dados .= "Paciente: $paciente_id <br>";
-    $dados .= "Médico: $medico_id <br>";
+    //extract($row_usuario);
+    $dados .= "ID". $row_usuario['id']." <br>";
+    $dados .= "Paciente:". $row_usuario['Paciente']." <br>";
+    $dados .= "Médico:". $row_usuario['Medico']." <br>";
     $dados .= "<hr>";
 }
 

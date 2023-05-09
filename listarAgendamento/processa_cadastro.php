@@ -41,7 +41,7 @@ if(!empty($btnInserir)){
   $id = $pdo->lastInsertId();
 
   if($id > 0){
-    header('Location: consultarAgendamento.php');
+    header('Location: index.php');
   }else{
     header('Location: cadastrar_evento.php');
   }
