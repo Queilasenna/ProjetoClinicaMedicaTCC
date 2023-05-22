@@ -1,15 +1,15 @@
 <?php
 session_start();
-include_once '../conexao.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/cep.js"></script>
   <style>
     body {
       margin: 0px;
@@ -38,54 +38,43 @@ include_once '../conexao.php';
 
     }
   </style>
-  <title>Agenda Medica</title>
+  <title>Excluir Agenda</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
  <?php include("../templates/menu.php"); ?>
+
 <body>
   <!-- FINAL DO MENU AZUL -->
   <br>
-  <h1>Agenda Medica</h1><br>
+  <h1> Excluir Agenda</h1><br>
+  <!-- FINAL DAS ABAS -->
+<?php
+  $token = $_POST['id'];
+  
+  include("../conexao.php");
+   
+  $query = $pdo->query("SELECT * FROM agenda WHERE id = $token");
+  $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
 
-  <table class="table table-stripped">
-    <tr>
-    <tr>
-      <th colspan="6">
-          <form action="novaAgenda.php" method="POST">
-            <button type="submit" class="btn btn-success" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
-          </form>
-      </th>
-    </tr>
-      <th>#</th>
-      <th>Medico</th>
-      <th>Mes</th>
-      <th>Ano</th>
-      <th>Atualizar</th>
-      <th>Deletar</th>
-    </tr>
+  foreach($resultado as $item){
+    $id = $item['id'];
+    
+  }
 
-    <?php
-    $sql = "SELECT * FROM agenda"; // Cria a sql
-    $resultado = $pdo->query($sql); // Executa no banco
-    $agenda = $resultado->fetchAll(); // Pega os resultados
 
-    foreach ($agenda as $agenda) { ?>
-      <tr>
-        <td><?= $agenda['id'] ?></td>
-        <td><?= $agenda['medico_nome'] ?></td>
-        <td><?= $agenda['mes'] ?></td>
-        <td><?= $agenda['ano'] ?></td>
-        <td><form action="alterar_agenda.php" method="POST">
-            <button type="submit" class="btn-sm btn-warning" name="id" id="id" value="<?= $agenda['id'] ?>">Editar</button>
-          </form>
-        </td>
-        <td><form action="excluir_agenda.php" method="POST">
-            <button type="submit" class="btn-sm btn-danger" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
-          </form>
-        </td>
-      </tr>
-    <?php } ?>
-  </table>
+?>
+
+<div class="alert alert-danger" role="alert">Deseja realmente excluir o registro: <b><?php echo $id ?> </b>
+</div>
+  <form action="validaAgenda.php" method="POST">
+    <input type="hidden" id="id" name="id" value="<?php echo $id ?>" />
+
+    <button type="submit" class="btn btn-danger" id="btnExcluir" name="btnExcluir" value="btnExcluir">Excluir</button>
+    <a href='index.php'>
+      <button type="button" class="btn btn-secondary">Voltar</button>
+    </a>
+  </form>
 
   <!-- JavaScript (Opcional) -->
   <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
