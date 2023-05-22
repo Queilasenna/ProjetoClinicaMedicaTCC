@@ -177,7 +177,7 @@ switch ($estado) {
       <div class="form-group col-md-4">
         <label for="datanasc">Data de Nascimento</label>
         <input type="date" class="form-control" id="datanasc" name="datanasc" placeholder="" value=" <?php echo date("d.m.Y"); ?>">
-      </div>
+        </div>
       <div class="form-group col-md-3">
         <label for="cpf">CPF</label>
         <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" value=" <?php echo $cpf ?>">
