@@ -59,7 +59,7 @@ include_once '../conexao.php';
   <!-- FINAL DO MENU AZUL -->
   <br>
 
-  <h1>PACIENTES AGENDADOS</h1> <br>
+  <h1>LISTA DE PACIENTES</h1> <br>
 
   <table class="table table-stripped">
     <div class="button">
