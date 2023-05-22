@@ -177,7 +177,7 @@ switch ($estado) {
       <div class="form-group col-md-4">
         <label for="datanasc">Data de Nascimento</label>
         <input type="date" class="form-control" id="datanasc" name="datanasc" placeholder="" value=" <?php echo date("d.m.Y"); ?>">
-        </div>
+      </div>
       <div class="form-group col-md-3">
         <label for="cpf">CPF</label>
         <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" value=" <?php echo $cpf ?>">
@@ -210,27 +210,33 @@ switch ($estado) {
       <div class="form-group col-md-3">
         <label>Especialidade:</label>
         <select class="form-control" name="especialidade" id="especialidade">
-          <option value="">Todas</option>
-          <option value="1">Anestesiologia</option>
-          <option value="2">Cancerologia</option>
-          <option value="3">Cardiologia</option>
-          <option value="4">Cirurgia Geral</option>
-          <option value="5">Clinico Geral</option>
-          <option value="6">Cirurgia Plastica</option>
-          <option value="7">Coloproctologia</option>
-          <option value="8">Dermatologia</option>
-          <option value="9">Endocrinologia</option>
-          <option value="10">Gastroenterologia</option>
-          <option value="11">Geriatria</option>
-          <option value="12">Ginecologia Obstetricia</option>
-          <option value="13">Hematologia</option>
-          <option value="14">Mastologia</option>
-          <option value="15">Neurologia</option>
-          <option value="16">Oftalmologia</option>
-          <option value="17">Ortopedia</option>
-          <option value="18">Pediatria</option>
-          <option value="19">Psquiatria</option>
-          <option value="20">Urologia</option>
+          <?php
+            if (!empty($especialidade)){
+              echo '<option value="'.$especialidade.'">'.$especialidade.'</option>';
+            }else{
+              echo '<option selected>Escolher...</option>';
+            }
+          ?>
+          <option value="Anestesiologia">Anestesiologia</option>
+          <option value="Cancerologia">Cancerologia</option>
+          <option value="Cardiologia">Cardiologia</option>
+          <option value="Cirurgia Geral">Cirurgia Geral</option>
+          <option value="Clinico Geral">Clinico Geral</option>
+          <option value="Cirurgia Plastica6">Cirurgia Plastica</option>
+          <option value="Coloproctologia">Coloproctologia</option>
+          <option value="Dermatologia">Dermatologia</option>
+          <option value="Endocrinologia">Endocrinologia</option>
+          <option value="Gastroenterologia">Gastroenterologia</option>
+          <option value="Geriatria">Geriatria</option>
+          <option value="Ginecologia Obstetricia">Ginecologia Obstetricia</option>
+          <option value="Hematologia">Hematologia</option>
+          <option value="Mastologia">Mastologia</option>
+          <option value="Neurologia">Neurologia</option>
+          <option value="Oftalmologia">Oftalmologia</option>
+          <option value="Ortopedia">Ortopedia</option>
+          <option value="Pediatria">Pediatria</option>
+          <option value="Psquiatria">Psquiatria</option>
+          <option value="Urologia">Urologia</option>
         </select>
         <!-- <button type="button" class="limpaArea">Limpar</button> -->
       </div>
