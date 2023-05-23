@@ -71,25 +71,33 @@ include_once '../conexao.php';
           </form>
 		  
    </div>
+   <br>
     <tr>
       <th>#</th>
-      <th>Nome</th>
-      <th>CPF</th>
-      <th>Telefone</th>
+      <th>Nome Paciente</th>
+      <th>Nome Médico</th>
+      <th>Data Agendamento</th>
+      <th>Hora Agendamento</th>
     
     </tr>
 
     <?php
-    $sql = "SELECT * FROM pacientes"; // Cria a sql
+    $sql = "SELECT eventos.id id, eventos.dataAgendamento dataAgendamento, eventos.horaAgendamento horaAgendamento, p.nome nome_paciente, m.nome nome_medico  
+              FROM eventos
+              JOIN medicos m ON (m.id = eventos.medico_id)
+              JOIN pacientes p ON (p.id = eventos.paciente_id)
+              ORDER BY eventos.dataAgendamento DESC"; // Cria a sql
+
     $resultado = $pdo->query($sql); // Executa no banco
     $pacientes = $resultado->fetchAll(); // Pega os resultados
 
     foreach ($pacientes as $paciente) { ?>
       <tr>
         <td><?= $paciente['id'] ?></td>
-        <td><?= $paciente['nome'] ?></td>
-        <td><?= $paciente['cpf'] ?></td>
-        <td><?= $paciente['telefone'] ?></td>
+        <td><?= $paciente['nome_paciente'] ?></td>
+        <td><?= $paciente['nome_medico'] ?></td>
+        <td><?= $paciente['dataAgendamento'] ?></td>
+        <td><?= $paciente['horaAgendamento'] ?></td>
        
       </tr>
     <?php } ?>

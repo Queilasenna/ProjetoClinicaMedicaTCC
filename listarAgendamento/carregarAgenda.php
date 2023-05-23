@@ -10,6 +10,9 @@ unset($data);
 $_SESSION['data'] = $_POST['data'];
 $data = $_POST['data'];
 
+if (Empty($data)){
+  header('Location: consultarAgendamento.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -74,7 +77,8 @@ $data = $_POST['data'];
                     $dataFinal   = date("Y-m-t", strtotime($data)); // ultimo dia da data digitada no index
 
                     $eventos = retornaDados(
-                        "SELECT *, p.nome nome_paciente, m.nome nome_medico  FROM eventos 
+                        "SELECT *, p.nome nome_paciente, m.nome nome_medico  
+                           FROM eventos 
                             JOIN medicos m ON (m.id = eventos.medico_id)
                             JOIN pacientes p ON (p.id = eventos.paciente_id)
                         WHERE dataAgendamento BETWEEN :inicio AND :fim",
@@ -89,7 +93,6 @@ $data = $_POST['data'];
                         echo '<small>' . $evento['dataAgendamento'] . '</small>';
                         echo '</div>';
                         echo '<p class="mb-1">Dr. ' . $evento['nome_medico'] . '</p>';
-                        echo '<small>' . $evento['descricao'] . '</small>';
                         echo '</a>';
                     }
                 ?>
