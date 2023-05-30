@@ -72,21 +72,6 @@ require '../conexao.php';
                             <?php } ?>
                         </select>
                     </div>
-    <!-- ROLO DA ESPECIALIDADE PARA RESOLVER. CRIAR UM BANCO PRA ESPECIALIDADE ??? -->
-                    <div class="form-group">
-                        <label for="Especialidade">Especialidade</label>
-                        <select class="form-control" id="especialidade" name="especialidade">
-                            <option value="" disabled selected></option>
-
-                            <?php
-                            $medicos = retornaDados('SELECT * FROM medicos');
-
-                            foreach ($medicos as $especialidade) {  ?>
-                                <option value=""><?= $medicos['especialidade'] ?></option>
-                            <?php } ?>
-                        </select>
-                        <!-- <input type="Text" class="form-control" id="exampleInputEmail1" name="especialidade_id"> -->
-                    </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Mês</label>

@@ -30,7 +30,6 @@ $dados .= "<h1>Listar Pacientes</h1>";
 while($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)){
     //var_dump($row_usuario);
     extract($row_usuario);
-    $dados .= "ID: $id <br>";
     $dados .= "Nome: $nome <br>";
     $dados .= "E-mail: $email <br>";
     $dados .= "<hr>";

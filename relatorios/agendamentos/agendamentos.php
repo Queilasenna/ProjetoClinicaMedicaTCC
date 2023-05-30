@@ -37,7 +37,7 @@ $dados .= "<h1>Pacientes Agendados</h1>";
 while($row_usuario = $result_usuarios->fetch(PDO::FETCH_ASSOC)){
     //var_dump($row_usuario);
     //extract($row_usuario);
-    $dados .= "ID". $row_usuario['id']." <br>";
+    
     $dados .= "Paciente:". $row_usuario['Paciente']." <br>";
     $dados .= "Médico:". $row_usuario['Medico']." <br>";
     $dados .= "<hr>";
