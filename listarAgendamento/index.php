@@ -18,7 +18,9 @@ include_once '../conexao.php';
     h1 {
       text-align: center;
     }
-
+tr {
+  text-align: center;
+}
     .background {
       width: 100vw;
       height: 100vh;
@@ -59,7 +61,7 @@ include_once '../conexao.php';
   <!-- FINAL DO MENU AZUL -->
   <br>
 
-  <h1>LISTA DE PACIENTES</h1> <br>
+  <h1>LISTA DE PACIENTES AGENDADOS</h1> <br>
 
   <table class="table table-stripped">
     <div class="button">
@@ -73,7 +75,7 @@ include_once '../conexao.php';
    </div>
    <br>
     <tr>
-      <th>#</th>
+      
       <th>Nome Paciente</th>
       <th>Nome Médico</th>
       <th>Data Agendamento</th>
@@ -93,7 +95,7 @@ include_once '../conexao.php';
 
     foreach ($pacientes as $paciente) { ?>
       <tr>
-        <td><?= $paciente['id'] ?></td>
+        
         <td><?= $paciente['nome_paciente'] ?></td>
         <td><?= $paciente['nome_medico'] ?></td>
         <td><?= $paciente['dataAgendamento'] ?></td>

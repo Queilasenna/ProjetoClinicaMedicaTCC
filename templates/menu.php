@@ -33,7 +33,7 @@
     </li>
   
     <li class="nav-item">
-        <a class="nav-link " href="../relatorios/index.php" role="button" aria-haspopup="true" aria-expanded="false">Relatório</a>
+        <a class="nav-link " href="../relatorios/index.php" role="button" aria-haspopup="true" aria-expanded="false">Relatórios</a>
 
 
     </li>
