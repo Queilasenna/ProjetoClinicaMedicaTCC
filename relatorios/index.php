@@ -1,7 +1,8 @@
 <?php
 
 session_start();
-$tempo_session = 10; // tempo em segundos
+// $tempo_session = 10; // tempo em segundos
+include ("../temposessao.php");
 
 if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
   $_SESSION = array();
