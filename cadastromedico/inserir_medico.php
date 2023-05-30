@@ -86,7 +86,7 @@ session_start();
 
       <div class="form-group col-md-2">
         <label>Situação</label>
-        <select class="form-control" name="situacao" id="situacao">
+        <select class="form-control" name="situacao" id="situacao" disabled>
           <option value="A">Ativo</option>
           <option value="I">Inativo</option>
         </select>
