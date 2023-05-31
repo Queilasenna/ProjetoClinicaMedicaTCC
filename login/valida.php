@@ -21,7 +21,7 @@ $query->execute(array(
 if ($query ->rowCount()<> 0) {
   header("Location: home.php");
     } else {
-      $_SESSION['msg'] = "Usuário e senha incorretos.";
+      $_SESSION['msg'] = "Usuário e senha incorretos!";
       header("Location: index.php");
     }  
 

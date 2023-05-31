@@ -27,19 +27,20 @@
 
         if (in_array($dia_da_semana, $dias_selecionados)) {
             // Insere no banco de dados o registro de agenda
-            $sql = "INSERT INTO agenda (dia, mes, ano, vagas, medico_id, especialidade_id) VALUES (:dia, :mes, :ano, :vagas, :medico_id, :especialidade_id)";
+            $sql = "INSERT INTO agenda (dia, mes, ano, vagas, medico_id, especialidade) VALUES (:dia, :mes, :ano, :vagas, :medico_id, :especialidade_id)";
             
             $query = $pdo->prepare($sql);
                         
             $resultado = $query->execute([
-              ':dia' => $dia,
-              ':mes' => $mes,
-              ':ano' => $ano,
-              ':vagas' => $vagas,
-              ':medico_id' => $medico_id,
-              ':especialidade_id' => $especialidade_id
+                ':dia' => $dia,
+                ':mes' => $mes,
+                ':ano' => $ano,
+                ':vagas' => $vagas,
+                ':medico_id' => $medico_id,
+                ':especialidade_id' => $especialidade_id
             ]);
         }
 
     }
-?>
+
+    header('Location: /tcc/agenda/index.php');

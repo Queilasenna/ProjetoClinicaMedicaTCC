@@ -39,7 +39,7 @@ include_once '../conexao.php';
     }
   </style>
   <title>Lista de Pacientes</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
  <?php include("../templates/menu.php"); ?>
 <body>
@@ -77,11 +77,11 @@ include_once '../conexao.php';
         <td><?= $paciente['cpf'] ?></td>
         <td><?= $paciente['telefone'] ?></td>
         <td><form action="alterar_paciente.php" method="POST">
-            <button type="submit" class="btn-sm btn-warning" name="id" id="id" value="<?= $paciente['id'] ?>">Editar</button>
+            <button type="submit" class="btn btn-sm btn-warning" name="id" id="id" value="<?= $paciente['id'] ?>">Editar</button>
           </form>
         </td>
         <td><form action="excluir_paciente.php" method="POST">
-            <button type="submit" class="btn-sm btn-danger" name="id" id="id" value="<?= $paciente['id'] ?>">Excluir</button>
+            <button type="submit" class="btn btn-sm btn-danger" name="id" id="id" value="<?= $paciente['id'] ?>">Excluir</button>
           </form>
         </td>
       </tr>

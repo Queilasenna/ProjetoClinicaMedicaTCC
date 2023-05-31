@@ -87,10 +87,12 @@ if (Empty($data)){
                     
 
                     foreach ($eventos as $evento){
+                        $date = date_create($evento['dataAgendamento'] . $evento['horaAgendamento']);
+
                         echo '<a href="#" class="list-group-item list-group-item-action" aria-current="true">';
                         echo '<div class="d-flex w-100 justify-content-between">';
                         echo '<h5 class="mb-1">' . $evento['nome_paciente'] . '</h5>';
-                        echo '<small>' . $evento['dataAgendamento'] . '</small>';
+                        echo '<small>' . date_format($date, 'd/m/Y H:i') . '</small>';
                         echo '</div>';
                         echo '<p class="mb-1">Dr. ' . $evento['nome_medico'] . '</p>';
                         echo '</a>';

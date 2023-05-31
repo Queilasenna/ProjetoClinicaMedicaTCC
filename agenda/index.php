@@ -39,48 +39,53 @@ include_once '../conexao.php';
     }
   </style>
   <title>Agenda Medica</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
- <?php include("../templates/menu.php"); ?>
+<?php include("../templates/menu.php"); ?>
+
 <body>
   <!-- FINAL DO MENU AZUL -->
   <br>
   <h1>Agenda Medica</h1><br>
 
+  <div class="d-flex px-3">
+    <form class="m-0 ms-auto" action="novaAgenda.php" method="POST">
+      <button type="submit" class="btn btn-success" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
+    </form>
+  </div>
   <table class="table table-stripped">
     <tr>
-    <tr>
-      <th colspan="6">
-          <form action="novaAgenda.php" method="POST">
-            <button type="submit" class="btn btn-success" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
-          </form>
-      </th>
-    </tr>
       <th>#</th>
       <th>Medico</th>
-      <th>Mes</th>
+      <th>Dia</th>
+      <th>Mês</th>
       <th>Ano</th>
-      <th>Atualizar</th>
-      <th>Deletar</th>
+      <th>Vagas Totais</th>
+      <th>Vagas Restantes</th>
+      <th>Ações</th>
     </tr>
 
     <?php
-    $sql = "SELECT * FROM agenda"; // Cria a sql
+    $sql = "SELECT * FROM agenda a join medicos m on (a.medico_id = m.id)"; // Cria a sql
     $resultado = $pdo->query($sql); // Executa no banco
     $agenda = $resultado->fetchAll(); // Pega os resultados
 
     foreach ($agenda as $agenda) { ?>
       <tr>
         <td><?= $agenda['id'] ?></td>
-        <td><?= $agenda['medico_nome'] ?></td>
+        <td><?= $agenda['nome'] ?></td>
+        <td><?= $agenda['dia'] ?></td>
         <td><?= $agenda['mes'] ?></td>
         <td><?= $agenda['ano'] ?></td>
-        <td><form action="alterar_agenda.php" method="POST">
-            <button type="submit" class="btn-sm btn-warning" name="id" id="id" value="<?= $agenda['id'] ?>">Editar</button>
+        <td><?= $agenda['vagas'] ?></td>
+        <td></td>
+        <td class="d-flex">
+          <form class="m-0" action="alterar_agenda.php" method="POST">
+            <button type="submit" class="btn btn-sm btn-warning" name="id" id="id" value="<?= $agenda['id'] ?>">Editar</button>
           </form>
-        </td>
-        <td><form action="excluir_agenda.php" method="POST">
-            <button type="submit" class="btn-sm btn-danger" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
+
+          <form class="m-0 ms-1" action="excluir_agenda.php" method="POST">
+            <button type="submit" class="btn btn-sm btn-danger" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
           </form>
         </td>
       </tr>

@@ -86,7 +86,7 @@ session_start();
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div> -->
         <div style="text-align: center;">
-          <button type="submit" class="btn btn-primary" style="margin-top: 20px; background-color: #0f3e96;"> Entrar</button>
+          <button type="submit" class="btn btn-primary" style="margin-top: 20px; background-color: #0f3e96;">Entrar</button>
           <form method="POST" action="#">    
         </div>
       

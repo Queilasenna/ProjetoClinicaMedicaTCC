@@ -39,53 +39,58 @@ include_once '../conexao.php';
     }
   </style>
   <title>Lista de Médicos</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
- <?php include("../templates/menu.php"); ?>
-<body>
-  <!-- FINAL DO MENU AZUL -->
-  <br>
-  <h1>Lista de Médicos</h1><br>
+<?php include("../templates/menu.php"); ?>
 
-  <table class="table table-stripped">
-    <tr>
-    <tr>
-      <th colspan="6">
+<body>
+  <main class="container-fluid">
+
+    <!-- FINAL DO MENU AZUL -->
+    <br>
+    <h1>Lista de Médicos</h1><br>
+
+    <table class="table table-stripped">
+      <tr>
+      <tr>
+        <th colspan="6">
           <form action="inserir_medico.php" method="POST">
             <button type="submit" class="btn btn-success" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
           </form>
-      </th>
-    </tr>
+        </th>
+      </tr>
       <th>#</th>
       <th>Nome</th>
       <th>CPF</th>
       <th>Telefone</th>
-      <th>Atualizar</th>
-      <th>Deletar</th>
-    </tr>
-
-    <?php
-    $sql = "SELECT * FROM medicos"; // Cria a sql
-    $resultado = $pdo->query($sql); // Executa no banco
-    $medicos = $resultado->fetchAll(); // Pega os resultados
-
-    foreach ($medicos as $medico) { ?>
-      <tr>
-        <td><?= $medico['id'] ?></td>
-        <td><?= $medico['nome'] ?></td>
-        <td><?= $medico['cpf'] ?></td>
-        <td><?= $medico['telefone'] ?></td>
-        <td><form action="alterar_medico.php" method="POST">
-            <button type="submit" class="btn-sm btn-warning" name="id" id="id" value="<?= $medico['id'] ?>">Editar</button>
-          </form>
-        </td>
-        <td><form action="excluir_medico.php" method="POST">
-            <button type="submit" class="btn-sm btn-danger" name="id" id="id" value="<?= $medico['id'] ?>">Excluir</button>
-          </form>
-        </td>
+      <th>Ações</th>
       </tr>
-    <?php } ?>
-  </table>
+
+      <?php
+      $sql = "SELECT * FROM medicos"; // Cria a sql
+      $resultado = $pdo->query($sql); // Executa no banco
+      $medicos = $resultado->fetchAll(); // Pega os resultados
+
+      foreach ($medicos as $medico) { ?>
+        <tr>
+          <td><?= $medico['id'] ?></td>
+          <td><?= $medico['nome'] ?></td>
+          <td><?= $medico['cpf'] ?></td>
+          <td><?= $medico['telefone'] ?></td>
+          <td class="d-flex flex-row">
+            <form class="m-0" action="alterar_medico.php" method="POST">
+              <button type="submit" class="btn btn-sm btn-warning" name="id" id="id" value="<?= $medico['id'] ?>">Editar</button>
+            </form>
+
+            <form class="m-0 ms-1" action="excluir_medico.php" method="POST">
+              <button type="submit" class="btn btn-sm btn-danger" name="id" id="id" value="<?= $medico['id'] ?>">Excluir</button>
+            </form>
+          </td>
+        </tr>
+      <?php } ?>
+    </table>
+  </main>
+
 
   <!-- JavaScript (Opcional) -->
   <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

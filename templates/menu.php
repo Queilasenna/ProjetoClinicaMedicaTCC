@@ -1,13 +1,13 @@
 <div class="background"></div>
-<nav class="navbar navbar-light" style="background-color: #0f3e96;">
+<nav class="navbar navbar-light px-2" style="background-color: #0f3e96;">
     <a class="navbar-brand" style="color: #fff" href="../login/home.php">JGPQ</a>
-    <form class="form-inline">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" style="color: #fff" href="../login/index.php">Sair</a>
-            </li>
-        </ul>
-    </form>
+
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" style="color: #fff" href="../login/index.php">Sair</a>
+        </li>
+    </ul>
+
 </nav>
 <br>
 
@@ -31,7 +31,7 @@
 
         </div>
     </li>
-  
+
     <li class="nav-item">
         <a class="nav-link " href="../relatorios/index.php" role="button" aria-haspopup="true" aria-expanded="false">Relatórios</a>
 

@@ -39,7 +39,7 @@ session_start();
     }
   </style>
   <title>Atualização</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
  <?php include("../templates/menu.php"); ?>
@@ -172,32 +172,32 @@ switch ($estado) {
     <div class="form-row">
       <div class="form-group col-md-5">
         <label for="nome">Nome Completo</label>
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="" value=" <?php echo $nome ?>">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="<?php echo $nome ?>">
       </div>
       <div class="form-group col-md-4">
         <label for="datanasc">Data de Nascimento</label>
-        <input type="date" class="form-control" id="datanasc" name="datanasc" placeholder="" value=" <?php echo date("d.m.Y"); ?>">
+        <input type="date" class="form-control" id="datanasc" name="datanasc" placeholder="" value="<?php echo $datanasc; ?>">
       </div>
       <div class="form-group col-md-3">
         <label for="cpf">CPF</label>
-        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" value=" <?php echo $cpf ?>">
+        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" value="<?php echo $cpf ?>">
       </div>
     </div>
 
     <div class="form-row">
       <div class="form-group col-md-3">
         <label for="email">E-mail</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="" value=" <?php echo $email ?>">
+        <input type="email" class="form-control" id="email" name="email" placeholder="" value="<?php echo $email ?>">
       </div>
 
       <div class="form-group col-md-2">
         <label for="tel">Telefone</label>
-        <input type="tel" class="form-control" id="tel" name="tel" placeholder="" value=" <?php echo $telefone ?>">
+        <input type="tel" class="form-control" id="tel" name="tel" placeholder="" value="<?php echo $telefone ?>">
       </div>
 
       <div class="form-group col-md-2">
         <label for="crm">CRM</label>
-        <input type="text" class="form-control" id="crm" name="crm" placeholder="" value=" <?php echo $crm ?>">
+        <input type="text" class="form-control" id="crm" name="crm" placeholder="" value="<?php echo $crm ?>">
       </div>
 
       <div class="form-group col-md-2">
@@ -247,21 +247,21 @@ switch ($estado) {
 
     <div class="form-group col-md-2">
         <label for="inputCEP">CEP</label>
-        <input type="text" class="form-control" id="cep" name="cep" placeholder="" onblur="pesquisacep(this.value);" value=" <?php echo $cep ?>">
+        <input type="text" class="form-control" id="cep" name="cep" placeholder="" onblur="pesquisacep(this.value);" value="<?php echo $cep ?>">
       </div>
 
       <div class="form-group col-md-4">
         <label for="rua">Rua</label>
-        <input type="text" class="form-control" id="rua" name="rua" placeholder="" value=" <?php echo $rua ?>">
+        <input type="text" class="form-control" id="rua" name="rua" placeholder="" value="<?php echo $rua ?>">
       </div>
       <div class="form-group col-md-4">
         <label for="bairro">Bairro</label>
-        <input type="text" class="form-control" id="bairro" name="bairro" placeholder=" "value=" <?php echo $bairro ?>">
+        <input type="text" class="form-control" id="bairro" name="bairro" placeholder=" "value="<?php echo $bairro ?>">
       </div>
       
       <div class="form-group col-md-2">
         <label for="numero">Número</label>
-        <input type="text" class="form-control" id="numero" name="numero" placeholder="" value=" <?php echo $numero ?>">
+        <input type="text" class="form-control" id="numero" name="numero" placeholder="" value="<?php echo $numero ?>">
       </div>
       
     </div>
@@ -269,7 +269,7 @@ switch ($estado) {
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">Cidade</label>
-        <input type="text" class="form-control" name="cidade" id="cidade" value=" <?php echo $cidade ?>">
+        <input type="text" class="form-control" name="cidade" id="cidade" value="<?php echo $cidade ?>">
       </div>
       <div class="form-group col-md-6">
         <label for="inputEstado">Estado</label>
