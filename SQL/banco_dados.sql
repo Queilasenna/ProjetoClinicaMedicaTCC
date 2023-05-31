@@ -43,7 +43,8 @@ CREATE TABLE eventos (
   dataAgendamento date NOT NULL,
   horaAgendamento time NOT NULL,
   medico_id INT NOT NULL,
-  paciente_id INT NOT NULL
+  paciente_id INT NOT NULL,
+  especialidade varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE agenda (
