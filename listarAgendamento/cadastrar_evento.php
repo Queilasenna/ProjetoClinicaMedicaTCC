@@ -95,6 +95,34 @@ require '../conexao.php';
 					<?php } ?>
 				</select>
 			</div>
+			
+			<div class="form-group">
+                        <label>Especialidade:</label>
+                        <select class="form-control" name="especialidade_id" id="especialidade_id">
+                            <option value="">Todas</option>
+                            <option value="1">Anestesiologia</option>
+                            <option value="2">Cancerologia</option>
+                            <option value="3">Cardiologia</option>
+                            <option value="4">Cirurgia Geral</option>
+                            <option value="5">Clinico Geral</option>
+                            <option value="6">Cirurgia Plastica</option>
+                            <option value="7">Coloproctologia</option>
+                            <option value="8">Dermatologia</option>
+                            <option value="9">Endocrinologia</option>
+                            <option value="10">Gastroenterologia</option>
+                            <option value="11">Geriatria</option>
+                            <option value="12">Ginecologia Obstetricia</option>
+                            <option value="13">Hematologia</option>
+                            <option value="14">Mastologia</option>
+                            <option value="15">Neurologia</option>
+                            <option value="16">Oftalmologia</option>
+                            <option value="17">Ortopedia</option>
+                            <option value="18">Pediatria</option>
+                            <option value="19">Psquiatria</option>
+                            <option value="20">Urologia</option>
+                        </select>
+                        <!-- <button type="button" class="limpaArea">Limpar</button> -->
+                    </div>
 
 			<button type="submit" class="btn btn-success" id="btnInserir" name="btnInserir" value="btnInserir">Cadastrar</button>
 
