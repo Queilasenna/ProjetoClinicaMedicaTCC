@@ -15,8 +15,9 @@ if(!empty($btnInserir)){
     $hora = filter_input(INPUT_POST, 'hora');
     $medico_id = filter_input(INPUT_POST, 'medico_id');
     $paciente_id = filter_input(INPUT_POST, 'paciente_id');
+    $especialidade_id = filter_input(INPUT_POST, 'especialidade_id');
 
-    $vagasRestantes = vagas_restantes($data, $medico_id);
+    $vagasRestantes = vagas_restantes($data, $medico_id, $especialidade_id);
 
     if($vagasRestantes < 1){
       $msg = "Não existem mais vagas para o agendamento";
