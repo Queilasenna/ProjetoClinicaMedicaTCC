@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once '../conexao.php';
+include 'funcoes.php';
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +58,7 @@ include_once '../conexao.php';
     <tr>
       <th>#</th>
       <th>Medico</th>
+      <th>Especialidade</th>
       <th>Dia</th>
       <th>Mês</th>
       <th>Ano</th>
@@ -66,7 +68,7 @@ include_once '../conexao.php';
     </tr>
 
     <?php
-    $sql = "SELECT * FROM agenda a join medicos m on (a.medico_id = m.id)"; // Cria a sql
+    $sql = "SELECT *, m.id medico_id, a.especialidade especialidade_agenda FROM agenda a join medicos m on (a.medico_id = m.id)"; // Cria a sql
     $resultado = $pdo->query($sql); // Executa no banco
     $agenda = $resultado->fetchAll(); // Pega os resultados
 
@@ -74,11 +76,18 @@ include_once '../conexao.php';
       <tr>
         <td><?= $agenda['id'] ?></td>
         <td><?= $agenda['nome'] ?></td>
+        <td><?= $agenda['especialidade_agenda'] ?></td>
         <td><?= $agenda['dia'] ?></td>
         <td><?= $agenda['mes'] ?></td>
         <td><?= $agenda['ano'] ?></td>
         <td><?= $agenda['vagas'] ?></td>
-        <td></td>
+
+        <td>
+          <?php
+            $data = $agenda['ano'] . '-' . $agenda['mes'] . '-' . $agenda['dia'];
+            echo vagas_restantes($data, $agenda['medico_id'], $agenda['especialidade_agenda']);
+          ?>
+        </td>
         <td class="d-flex">
           <form class="m-0" action="alterar_agenda.php" method="POST">
             <button type="submit" class="btn btn-sm btn-warning" name="id" id="id" value="<?= $agenda['id'] ?>">Editar</button>

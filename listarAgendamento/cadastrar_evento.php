@@ -58,6 +58,13 @@ require '../conexao.php';
 
 
 	<div class="container">
+		<?php 
+			if(isset($_GET['msg'])){ ?>
+				<div class="alert alert-danger">
+					<?= $_GET['msg'] ?>
+				</div>
+		<?php } ?>
+
 		<h1 class="text-center mt-4 mb-4">Agendar Consultas</h1>
 		<form method="POST" action="processa_cadastro.php">
 			<div class="form-group">

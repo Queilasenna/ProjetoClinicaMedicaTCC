@@ -3,6 +3,7 @@
 session_start();
 
 include("../conexao.php");
+include('../agenda/funcoes.php');
 
 $btnInserir  = filter_input(INPUT_POST, 'btnInserir');
 $btnAtualiza = filter_input(INPUT_POST, 'btnAtualiza');
@@ -14,6 +15,14 @@ if(!empty($btnInserir)){
     $hora = filter_input(INPUT_POST, 'hora');
     $medico_id = filter_input(INPUT_POST, 'medico_id');
     $paciente_id = filter_input(INPUT_POST, 'paciente_id');
+
+    $vagasRestantes = vagas_restantes($data, $medico_id);
+
+    if($vagasRestantes < 1){
+      $msg = "Não existem mais vagas para o agendamento";
+      header('Location: cadastrar_evento.php?msg=' . $msg);
+      exit;
+    }
 
   $sql = "INSERT INTO eventos 
           (
