@@ -18,16 +18,30 @@
     <li class="nav-item">
         <a class="nav-link active" href="../login/home.php">Home</a>
     </li>
+
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pacientes</a>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="../cadastropaciente/index.php">Cadastrar Paciente</a>
-            <a class="dropdown-item" href="../cadastromedico/index.php">Cadastrar Médico</a>
+            <a class="dropdown-item" href="../cadastropaciente/Inserir_paciente.php">Cadastrar Paciente</a>
+            <a class="dropdown-item" href="../cadastropaciente/index.php">Pacientes Cadastrados</a>
+            <a class="dropdown-item" href="../listarAgendamento/index.php">Pacientes Agendados</a>
+
+
+
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Médicos</a>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="../cadastromedico/inserir_medico.php">Cadastrar Médico</a>
+            <a class="dropdown-item" href="../cadastromedico/index.php">Médicos Cadastrados</a>
+            
+
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agendamentos</a>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="../listarAgendamento/index.php">Agendar Consulta</a>
-            <a class="dropdown-item" href="../agenda/index.php">Criar Agenda</a>
+            <a class="dropdown-item" href="../listarAgendamento/cadastrar_evento.php">Agendar Consulta</a>
+            <a class="dropdown-item" href="../agenda/index.php">Médicos Agendados</a>  
+            <a class="dropdown-item" href="../listarAgendamento/consultarAgendamento.php">Consultar Agendamento</a>
+            <a class="dropdown-item" href="../agenda/novaAgenda.php">Criar Agenda</a>
 
         </div>
     </li>

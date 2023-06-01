@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -19,40 +19,55 @@ session_start();
       text-align: center;
     }
 
-    .background {
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      z-index: -1000;
-      left: 0;
-      top: 0;
-      opacity: 0.1;
-      filter: blur(19px);
-      background-color: #fff;
+    .btn-cad {
+      margin-top: 10px;
+      border: none;
+      padding: 5px;
+      background-color: #0f3e96;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .btn-cad:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .btn-vol {
+      border: none;
+      padding: 5px;
+      background-color: #70809096;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .btn-vol:hover {
+      background-color: gray;
+      color: white;
     }
 
     form {
       margin-left: 15px;
       margin-right: 40px;
-
-
     }
   </style>
+
   <title>Cadastrar Paciente</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
- <?php include("../templates/menu.php"); ?>
+<?php include("../templates/menu.php"); ?>
+
 <body>
-  <!-- FINAL DO MENU AZUL -->
   <br>
   <h1> Cadastro de Paciente</h1><br>
-  <!-- FINAL DAS ABAS -->
 
   <form action="valida_paciente.php" method="POST">
     <div class="form-row">
       <div class="form-group col-md-5">
         <label for="nome">Nome Completo</label>
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Ex: Patrícia Senna">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="">
       </div>
       <div class="form-group col-md-4">
         <label for="datanasc">Data de Nascimento</label>
@@ -60,46 +75,46 @@ session_start();
       </div>
       <div class="form-group col-md-3">
         <label for="cpf">CPF</label>
-        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex: 40492175492">
+        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="">
       </div>
     </div>
 
     <div class="form-row">
-      <div class="form-group col-md-8">
+      <div class="form-group col-md-6">
         <label for="email">E-mail</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Ex: patricia94@...">
+        <input type="email" class="form-control" id="email" name="email" placeholder="">
       </div>
-      <div class="form-group col-md-4">
+
+      <div class="form-group col-md-6">
         <label for="tel">Telefone</label>
-        <input type="tel" class="form-control" id="tel" name="tel" placeholder="18 4004-8922 ">
+        <input type="tel" class="form-control" id="tel" name="tel" placeholder="">
       </div>
 
-    </div>
 
-    <div class="form-row">
+      <div class="form-row">
 
-    <div class="form-group col-md-2">
-        <label for="inputCEP">CEP</label>
-        <input type="text" class="form-control" id="cep" name="cep" placeholder="" onblur="pesquisacep(this.value);">
-      </div>
+<div class="form-group col-md-2">
+  <label for="inputCEP">CEP</label>
+  <input type="text" class="form-control" id="cep" name="cep" placeholder="" onblur="pesquisacep(this.value);">
+</div>
 
-      <div class="form-group col-md-4">
-        <label for="rua">Rua</label>
-        <input type="text" class="form-control" id="rua" name="rua" placeholder="">
-      </div>
-      <div class="form-group col-md-4">
-        <label for="bairro">Bairro</label>
-        <input type="text" class="form-control" id="bairro" name="bairro" placeholder="">
-      </div>
-      
-      <div class="form-group col-md-2">
-        <label for="numero">Número</label>
-        <input type="text" class="form-control" id="numero" name="numero" placeholder="">
-      </div>
-      
-    </div>
-    
-    <div class="form-row">
+<div class="form-group col-md-4">
+  <label for="rua">Rua</label>
+  <input type="text" class="form-control" id="rua" name="rua" placeholder="">
+</div>
+<div class="form-group col-md-4">
+  <label for="bairro">Bairro</label>
+  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="">
+</div>
+
+<div class="form-group col-md-2">
+  <label for="numero">Número</label>
+  <input type="text" class="form-control" id="numero" name="numero" placeholder="">
+</div>
+
+</div>
+
+<div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputCity">Cidade</label>
         <input type="text" class="form-control" name="cidade" id="cidade">
@@ -138,12 +153,12 @@ session_start();
           <option value="EX">Estrangeiro</option>
         </select>
       </div>
-  
+
     </div>
 
-    <button type="submit"  class="btn btn-success" id="btnInserir" name="btnInserir" value="btnInserir" >Cadastrar</button>
+    <button type="submit" class="btn-cad" id="btnInserir" name="btnInserir" value="btnInserir">Cadastrar</button>
     <a href='index.php'>
-      <button type="button" class="btn btn-secondary">Voltar</button>
+      <button type="button" class="btn-vol">Voltar</button>
     </a>
   </form>
 

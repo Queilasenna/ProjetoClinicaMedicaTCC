@@ -35,6 +35,17 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
             h1 {
                 text-align: center;
             }
+.btn-rel{
+padding: 6px;
+  background-color:#0f3e96;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.btn-rel:hover {
+  background-color: black;
+  color: white;
+}
 
             .background {
                 width: 100vw;
@@ -79,7 +90,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                             <p class="card-text">
                                 <i class="fa fa-users" aria-hidden="true" style="font-size:48px; color:#0f3e96"></i>
                             </p>
-                            <a href="paciente/pacientes.php" class="btn btn-primary" target="_blank">Gerar Relatório</a>
+                            <a href="paciente/pacientes.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +101,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                             <p class="card-text">
                                 <i class="fa fa-address-book" aria-hidden="true" style="font-size:48px; color:#0f3e96"></i>
                             </p>
-                            <a href="agendamentos/agendamentos.php" class="btn btn-primary" target="_blank">Gerar Relatório</a>
+                            <a href="agendamentos/agendamentos.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +112,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                             <p class="card-text">
                                 <i class="fa fa-user-md" aria-hidden="true" style="font-size:48px; color:#0f3e96"></i>
                             </p>
-                            <a href="medico/medicos.php" class="btn btn-primary" target="_blank">Gerar Relatório</a>
+                            <a href="medico/medicos.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>
                     </div>
                 </div>

@@ -35,7 +35,7 @@ include_once '../conexao.php';
       margin-left: 15px;
       margin-right: 40px;
 
-
+      
     }
   </style>
   <title>Lista de Médicos</title>
@@ -51,14 +51,7 @@ include_once '../conexao.php';
     <h1>Lista de Médicos</h1><br>
 
     <table class="table table-stripped">
-      <tr>
-      <tr>
-        <th colspan="6">
-          <form action="inserir_medico.php" method="POST">
-            <button type="submit" class="btn btn-success" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
-          </form>
-        </th>
-      </tr>
+    
       <th>#</th>
       <th>Nome</th>
       <th>CPF</th>

@@ -19,7 +19,25 @@ include 'funcoes.php';
     h1 {
       text-align: center;
     }
-
+.btn-novo {
+  background-color:#0f3e96;
+  color: white;
+  border-radius: 5px;
+}
+.btn-novo:hover {
+  background-color: black;
+  color: white;
+}
+.btn-ins{
+  padding: 6px;
+  background-color:#0f3e96;
+  color: white;
+  border-radius: 5px;
+}
+.btn-ins:hover {
+  background-color: black;
+  color: white;
+}
     .background {
       width: 100vw;
       height: 100vh;
@@ -51,7 +69,7 @@ include 'funcoes.php';
 
   <div class="d-flex px-3">
     <form class="m-0 ms-auto" action="novaAgenda.php" method="POST">
-      <button type="submit" class="btn btn-success" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
+      <button type="submit" class="btn-ins" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
     </form>
   </div>
   <table class="table table-stripped">
@@ -90,7 +108,7 @@ include 'funcoes.php';
         </td>
         <td class="d-flex">
           <form class="m-0" action="alterar_agenda.php" method="POST">
-            <button type="submit" class="btn btn-sm btn-warning" name="id" id="id" value="<?= $agenda['id'] ?>">Editar</button>
+            <button type="submit" class="btn-novo   " name="id" id="id" value="<?= $agenda['id'] ?>">Editar</button>
           </form>
 
           <form class="m-0 ms-1" action="excluir_agenda.php" method="POST">

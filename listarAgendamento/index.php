@@ -18,9 +18,11 @@ include_once '../conexao.php';
     h1 {
       text-align: center;
     }
-tr {
-  text-align: center;
-}
+
+    tr {
+      text-align: center;
+    }
+
     .background {
       width: 100vw;
       height: 100vh;
@@ -37,26 +39,28 @@ tr {
       margin-left: 15px;
       margin-right: 40px;
 
-	}
-	.button {
-		display: flex;
-		width: 521px;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-		
-					
-	}
-	form .btn btn-success {
-		text-align: center;
-		align-items: center;
-	}
-	
+    }
+
+    .button {
+      display: flex;
+      width: 521px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+
+
+    }
+
+    form .btn btn-success {
+      text-align: center;
+      align-items: center;
+    }
   </style>
   <title>Lista de Pacientes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
- <?php include("../templates/menu.php"); ?>
+<?php include("../templates/menu.php"); ?>
+
 <body>
   <!-- FINAL DO MENU AZUL -->
   <br>
@@ -64,23 +68,15 @@ tr {
   <h1>LISTA DE PACIENTES AGENDADOS</h1> <br>
 
   <table class="table table-stripped">
-    <div class="button">
-	      <form action="cadastrar_evento.php" method="POST">
-            <button type="submit" class="btn btn-success" name="btnInserir" id="btnInserir" value="btnInserir">Agendar Consulta</button>
-          </form>
-            <form action="consultarAgendamento.php" method="POST">
-            <button type="submit" class="btn btn-success" name="btnInserir" id="btnInserir" value="btnInserir">Consultar Agendamento</button>
-          </form>
-		  
-   </div>
-   <br>
+
+
     <tr>
-      
+
       <th>Nome Paciente</th>
       <th>Nome Médico</th>
       <th>Data Agendamento</th>
       <th>Hora Agendamento</th>
-    
+
     </tr>
 
     <?php
@@ -95,12 +91,12 @@ tr {
 
     foreach ($pacientes as $paciente) { ?>
       <tr>
-        
+
         <td><?= $paciente['nome_paciente'] ?></td>
         <td><?= $paciente['nome_medico'] ?></td>
         <td><?= $paciente['dataAgendamento'] ?></td>
         <td><?= $paciente['horaAgendamento'] ?></td>
-       
+
       </tr>
     <?php } ?>
   </table>
