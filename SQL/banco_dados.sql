@@ -7,7 +7,7 @@ CREATE TABLE medicos (
   telefone varchar(100) NOT NULL,
   crm varchar(100) NOT NULL,
   situacao varchar(100) NOT NULL,
-  especialidade varchar(100) NOT NULL,
+  especialidade int(100) NOT NULL,
   rua varchar(100) NOT NULL,
   bairro varchar(100) NOT NULL,
   cidade varchar(100) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE eventos (
   horaAgendamento time NOT NULL,
   medico_id INT NOT NULL,
   paciente_id INT NOT NULL,
-  especialidade varchar(100) NOT NULL
+  especialidade int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE agenda (
@@ -54,5 +54,5 @@ CREATE TABLE agenda (
   mes varchar(10) NOT NULL,
   ano varchar(4) NOT NULL,
   medico_id INT NOT NULL,
-  especialidade varchar(255) NOT NULL
+  especialidade int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
