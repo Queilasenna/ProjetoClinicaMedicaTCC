@@ -1,6 +1,24 @@
 <?php
+
 session_start();
+// $tempo_session = 10; // tempo em segundos
+include("../temposessao.php");
+
+if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
+    $_SESSION = array();
+    if (isset($_COOKIE[session_name()])) {
+        setcookie(session_name(), '', time() - 42000, '/');
+    }
+    session_unset();
+    @session_destroy();
+
+    header('Location: ../login/index.php');
+} else {
+    /* aqui vai o seu código normal */
+    $_SESSION["time"] = time();
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -87,9 +105,16 @@ session_start();
         </div> -->
      
         <div style="text-align: center;">
-          <form method="POST" action="#"> 
-          <button type="submit" class="btn btn-primary" style="margin-top: 20px; background-color: #0f3e96;">Cadastre-se</button>
-          <p class="text-danger">
+            <button type="submit" class="btn btn-primary"
+              style="margin-top: 20px; background-color: #0f3e96;">Entrar</button>
+            <form method="POST" action="#">
+          </div>
+          <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary"
+              style="margin-top: 20px; background-color: #0f3e96;">Voltar</button>
+            <form method="POST" action="#">
+          </div>
+          
 
       <?php
       if (isset($_SESSION['msg'])) {
@@ -110,3 +135,8 @@ session_start();
 </body>
 
 </html>
+
+
+<?php
+}
+?>

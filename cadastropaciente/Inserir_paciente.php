@@ -1,5 +1,22 @@
 <?php
+
 session_start();
+// $tempo_session = 10; // tempo em segundos
+include("../temposessao.php");
+
+if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
+    $_SESSION = array();
+    if (isset($_COOKIE[session_name()])) {
+        setcookie(session_name(), '', time() - 42000, '/');
+    }
+    session_unset();
+    @session_destroy();
+
+    header('Location: ../login/index.php');
+} else {
+    /* aqui vai o seu código normal */
+    $_SESSION["time"] = time();
+
 ?>
 
 <!DOCTYPE html>
@@ -170,3 +187,7 @@ session_start();
 </body>
 
 </html>
+
+<?php
+}
+?>
