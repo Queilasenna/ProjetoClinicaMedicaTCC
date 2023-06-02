@@ -268,7 +268,7 @@ switch ($estado) {
           <option value="Oftalmologia">Oftalmologia</option>
           <option value="Ortopedia">Ortopedia</option>
           <option value="Pediatria">Pediatria</option>
-          <option value="Psquiatria">Psquiatria</option>
+          <option value="Psiquiatria">Psiquiatria</option>
           <option value="Urologia">Urologia</option>
         </select>
         <!-- <button type="button" class="limpaArea">Limpar</button> -->

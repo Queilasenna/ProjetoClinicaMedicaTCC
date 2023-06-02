@@ -160,7 +160,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 						<option value="16">Oftalmologia</option>
 						<option value="17">Ortopedia</option>
 						<option value="18">Pediatria</option>
-						<option value="19">Psquiatria</option>
+						<option value="19">Psiquiatria</option>
 						<option value="20">Urologia</option>
 					</select>
 					<!-- <button type="button" class="limpaArea">Limpar</button> -->
