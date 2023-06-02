@@ -41,14 +41,14 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       margin-top: 10px;
       border: none;
       padding: 5px;
-      background-color: #0f3e96;
+      background-color:  #007bff;
       color: white;
       border-radius: 5px;
       text-decoration: none;
     }
 
     .btn-cad:hover {
-      background-color: #007bff;
+      background-color: #0f3e96;
       color: white;
     }
 

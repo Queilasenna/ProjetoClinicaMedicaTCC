@@ -35,17 +35,20 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
             h1 {
                 text-align: center;
             }
-.btn-rel{
-padding: 6px;
-  background-color:#0f3e96;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-}
-.btn-rel:hover {
-  background-color: black;
-  color: white;
-}
+
+            .btn-rel {
+                padding: 6px;
+                background-color: #007bff ;
+                color: white;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+
+            .btn-rel:hover {
+                background-color: #005BBB;
+                color: white;
+            }
+
 
             .background {
                 width: 100vw;
@@ -88,7 +91,7 @@ padding: 6px;
                         <div class="card-body">
                             <h5 class="card-title">Pacientes</h5>
                             <p class="card-text">
-                                <i class="fa fa-users" aria-hidden="true" style="font-size:48px; color:#0f3e96"></i>
+                                <i class="fa fa-users" aria-hidden="true" style="font-size:48px; color:#007bff"></i>
                             </p>
                             <a href="paciente/pacientes.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>
@@ -99,7 +102,7 @@ padding: 6px;
                         <div class="card-body">
                             <h5 class="card-title">Agendamentos</h5>
                             <p class="card-text">
-                                <i class="fa fa-address-book" aria-hidden="true" style="font-size:48px; color:#0f3e96"></i>
+                                <i class="fa fa-address-book" aria-hidden="true" style="font-size:48px; color: #007bff"></i>
                             </p>
                             <a href="agendamentos/agendamentos.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>
@@ -110,7 +113,7 @@ padding: 6px;
                         <div class="card-body">
                             <h5 class="card-title">Médicos</h5>
                             <p class="card-text">
-                                <i class="fa fa-user-md" aria-hidden="true" style="font-size:48px; color:#0f3e96"></i>
+                                <i class="fa fa-user-md" aria-hidden="true" style="font-size:48px; color:#007bff"></i>
                             </p>
                             <a href="medico/medicos.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>

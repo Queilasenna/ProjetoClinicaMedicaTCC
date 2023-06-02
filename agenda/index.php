@@ -36,36 +36,47 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
     h1 {
       text-align: center;
     }
-.btn-novo {
-  background-color:#0f3e96;
-  color: white;
-  border-radius: 5px;
-}
-.btn-novo:hover {
-  background-color: black;
-  color: white;
-}
+
+    .btn-novo {
+        border: none;
+        padding: 5px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      .btn-novo:hover {
+        background-color: #0f3e96;
+        color: white;
+      }
+
+      .btn-del {
+        border: none;
+        padding: 5px;
+        background-color: #E61111;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      .btn-del:hover {
+        background-color: #C43535;
+        color: white;
+      }
+      
 .btn-ins{
-  padding: 6px;
-  background-color:#0f3e96;
-  color: white;
-  border-radius: 5px;
+  border: none;
+        padding: 5px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
 }
 .btn-ins:hover {
-  background-color: black;
-  color: white;
+  background-color: #0f3e96;
+        color: white;
 }
-    .background {
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      z-index: -1000;
-      left: 0;
-      top: 0;
-      opacity: 0.1;
-      filter: blur(19px);
-      background-color: #fff;
-    }
 
     form {
       margin-left: 15px;
@@ -129,7 +140,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
           </form>
 
           <form class="m-0 ms-1" action="excluir_agenda.php" method="POST">
-            <button type="submit" class="btn btn-sm btn-danger" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
+            <button type="submit" class="btn-del" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
           </form>
         </td>
       </tr>
