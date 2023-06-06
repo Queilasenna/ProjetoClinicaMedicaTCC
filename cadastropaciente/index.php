@@ -35,34 +35,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       text-align: center;
     }
 
-    .btn-ed {
-        border: none;
-        padding: 5px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-      }
-
-      .btn-ed:hover {
-        background-color: #0f3e96;
-        color: white;
-      }
-
-      .btn-del {
-        border: none;
-        padding: 5px;
-        background-color: #70809096;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-      }
-
-      .btn-del:hover {
-        background-color: gray;
-        color: white;
-      }
-
     form {
       margin-left: 15px;
       margin-right: 40px;
@@ -104,11 +76,11 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
           <td><?= $paciente['telefone'] ?></td>
           <td class="d-flex flex-row">
             <form class="m-0" action="alterar_paciente.php" method="POST">
-              <button type="submit" class="btn-ed" name="id" id="id" value="<?= $paciente['id'] ?>">Editar</button>
+              <button type="submit" class="btn btn-primary" name="id" id="id" value="<?= $paciente['id'] ?>">Editar</button>
             </form>
           
             <form class="m-0 ms-1" action="excluir_paciente.php" method="POST">
-              <button type="submit" class="btn-del" name="id" id="id" value="<?= $paciente['id'] ?>">Excluir</button>
+              <button type="submit" class="btn btn-danger" name="id" id="id" value="<?= $paciente['id'] ?>">Excluir</button>
             </form>
           </td>
         </tr>

@@ -1,29 +1,68 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo de janela modal com Bootstrap 5</title>
 
-session_start();
-$tempo_session = 10; // tempo em segundos
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
 
-if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
-    $_SESSION = array();
-    if (isset($_COOKIE[session_name()])) {
-        setcookie(session_name(), '', time() - 42000, '/');
+  <!-- jQuery e Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Exemplo de janela modal com Bootstrap 5</h1>
+    <p>Clique no botão abaixo para abrir a janela modal:</p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-var="valor-da-variavel">Abrir janela modal</button>
+  </div>
+
+  <!-- Janela Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Minha janela modal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="meu-form" method="post" action="pagina-de-destino.php">
+            <input type="hidden" name="minha-var" id="minha-var" value="">
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome:</label>
+              <input type="text" class="form-control" id="nome" name="nome">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">E-mail:</label>
+              <input type="email" class="form-control" id="email" name="email">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary" onclick="submitForm()">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para enviar o formulário -->
+  <script>
+    function submitForm() {
+      var minhaVar = $('#exampleModal').data('var');
+      $('#minha-var').val(minhaVar);
+      $('#meu-form').submit();
     }
-    session_unset();
-    @session_destroy();
 
-    /* Aqui vc pode redirecionar para outra página ou escrever uma mensagem de sessão
-     finalizada por tempo de inatividade */
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
 
-    //Redirecionado para alguma página
+    myModal.addEventListener('hide.bs.modal', function (event) {
+      var form = document.getElementById('meu-form');
+      form.submit();
+    })
+  </script>
 
-
-} else {
-    $_SESSION["time"] = time();
-    $_SESSION["nome"] = "Fabrício";
-
-    /* aqui vai o seu código normal */
-    
-    //Código do Sistema
-}
-
-echo $_SESSION["nome"] . " - " . $_SESSION["time"];
+</body>
+</html>
