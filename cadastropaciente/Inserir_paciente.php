@@ -81,7 +81,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
     <h1>Cadastro de Paciente</h1><br>
 
     <form action="valida_paciente.php" method="POST">
-      <div class="form-row">
+      <div class="row">
         <div class="form-group col-md-5">
           <label for="nome">Nome Completo</label>
           <input type="text" class="form-control" id="nome" name="nome" placeholder="">
@@ -96,7 +96,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="row">
         <div class="form-group col-md-5">
           <label for="email">E-mail</label>
           <input type="email" class="form-control" id="email" name="email" placeholder="">
@@ -114,7 +114,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       </div>
       </div>
 
-      <div class="form-row">
+      <div class="row">
         
         <div class="form-group col-md-5">
           <label for="rua">Rua</label>
@@ -131,7 +131,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
         </div>
       </div>
 
-      <div class="form-row">
+      <div class="row">
         <div class="form-group col-md-6">
           <label for="inputCity">Cidade</label>
           <input type="text" class="form-control" name="cidade" id="cidade">
