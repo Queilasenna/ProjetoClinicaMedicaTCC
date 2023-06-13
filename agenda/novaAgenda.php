@@ -71,7 +71,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 
     <br>
     <div class="bloco">
-        <div class="row mb>
+        <div class="row mb">
 
             <div class="form-group col>
                 <form action="processaAgenda.php" method="POST">
