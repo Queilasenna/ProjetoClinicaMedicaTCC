@@ -39,10 +39,10 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agendamentos</a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="../listarAgendamento/cadastrar_evento.php">Agendar Consulta</a>
-            <a class="dropdown-item" href="../listarAgendamento/index.php">Pacientes Agendados</a>
-            <a class="dropdown-item" href="../agenda/index.php">Agenda Médica</a>  
             <a class="dropdown-item" href="../listarAgendamento/consultarAgendamento.php">Consultar Agendamento</a>
+            <a class="dropdown-item" href="../listarAgendamento/index.php">Pacientes Agendados</a>
             <a class="dropdown-item" href="../agenda/novaAgenda.php">Criar Agenda Médica</a>
+            <a class="dropdown-item" href="../agenda/index.php">Agenda Médica</a>
 
         </div>
     </li>
