@@ -40,9 +40,9 @@
         <div class="dropdown-menu">
             <a class="dropdown-item" href="../listarAgendamento/cadastrar_evento.php">Agendar Consulta</a>
             <a class="dropdown-item" href="../listarAgendamento/index.php">Pacientes Agendados</a>
-            <a class="dropdown-item" href="../agenda/index.php">Médicos Agendados</a>  
+            <a class="dropdown-item" href="../agenda/index.php">Agenda Médica</a>  
             <a class="dropdown-item" href="../listarAgendamento/consultarAgendamento.php">Consultar Agendamento</a>
-            <a class="dropdown-item" href="../agenda/novaAgenda.php">Criar Agenda</a>
+            <a class="dropdown-item" href="../agenda/novaAgenda.php">Criar Agenda Médica</a>
 
         </div>
     </li>
