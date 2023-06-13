@@ -71,12 +71,12 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 
     <br>
     <div class="bloco">
-        <div class="row mb>
+        <div class="row">
 
-            <div class="form-group col>
+            <div class="form-group mb-3">
                 <form action="processaAgenda.php" method="POST">
 
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="medico">Médico:</label>
                         <select class="form-control" id="medico" name="medico_id">
                             <option value="" disabled selected>Selecione o médico</option>
@@ -90,7 +90,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label>Especialidade:</label>
                         <select class="form-control" name="especialidade_id" id="especialidade_id">
                             <option value="">Todas</option>
