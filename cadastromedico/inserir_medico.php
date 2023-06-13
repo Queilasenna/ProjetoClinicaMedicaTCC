@@ -37,34 +37,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       text-align: center;
     }
 
-    .btn-cad {
-      margin-top: 10px;
-      border: none;
-      padding: 5px;
-      background-color:  #007bff;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    .btn-cad:hover {
-      background-color: #0f3e96;
-      color: white;
-    }
-
-    .btn-vol {
-      border: none;
-      padding: 5px;
-      background-color: #70809096;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-
-    .btn-vol:hover {
-      background-color: gray;
-      color: white;
-    }
 
     form {
       margin-left: 15px;
@@ -82,7 +54,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
   <h1> Cadastro Médico</h1><br>
 
   <form action="valida_medico.php" method="POST">
-    <div class="row">
+    <div class="row mb-2">
       <div class="form-group col-md-5">
         <label for="nome">Nome Completo</label>
         <input type="text" class="form-control" id="nome" name="nome" placeholder="">
@@ -97,7 +69,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-2">
       <div class="form-group col-md-3">
         <label for="email">E-mail</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="">
@@ -149,7 +121,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
     </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-2">
 
       <div class="form-group col-md-2">
         <label for="inputCEP">CEP</label>
@@ -172,7 +144,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 
     </div>
 
-    <div class="row">
+    <div class="row mb-3">
       <div class="form-group col-md-6">
         <label for="inputCity">Cidade</label>
         <input type="text" class="form-control" name="cidade" id="cidade">
@@ -214,9 +186,9 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 
     </div>
 
-    <button type="submit" class="btn-cad" id="btnInserir" name="btnInserir" value="btnInserir">Cadastrar</button>
+    <button type="submit" class="btn btn-primary btn-sm" id="btnInserir" name="btnInserir" value="btnInserir">Cadastrar</button>
     <a href='index.php'>
-      <button type="button" class="btn-vol">Voltar</button>
+      <button type="button" class="btn btn-secondary btn-sm">Voltar</button>
     </a>
   </form>
 

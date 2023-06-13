@@ -37,47 +37,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       text-align: center;
     }
 
-    .btn-novo {
-        border: none;
-        padding: 5px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-      }
-
-      .btn-novo:hover {
-        background-color: #0f3e96;
-        color: white;
-      }
-
-      .btn-del {
-        border: none;
-        padding: 5px;
-        background-color: #E61111;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-      }
-
-      .btn-del:hover {
-        background-color: #C43535;
-        color: white;
-      }
-      
-.btn-ins{
-  border: none;
-        padding: 5px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 5px;
-        text-decoration: none;
-}
-.btn-ins:hover {
-  background-color: #0f3e96;
-        color: white;
-}
-
     form {
       margin-left: 15px;
       margin-right: 40px;
@@ -95,9 +54,9 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
   <br>
   <h1>Agenda Medica</h1><br>
 
-  <div class="d-flex px-3">
+  <div class="px-3">
     <form class="m-0 ms-auto" action="novaAgenda.php" method="POST">
-      <button type="submit" class="btn-ins" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
+      <button type="submit" class="btn btn-primary btn-sm" name="btnInserir" id="btnInserir" value="btnInserir">Inserir</button>
     </form>
   </div>
   <table class="table table-stripped">
@@ -136,11 +95,11 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
         </td>
         <td class="d-flex">
           <form class="m-0" action="alterar_agenda.php" method="POST">
-            <button type="submit" class="btn-novo   " name="id" id="id" value="<?= $agenda['id'] ?>">Editar</button>
+            <button type="submit" class="btn btn-primary btn-sm" name="id" id="id" value="<?= $agenda['id'] ?>">Editar</button>
           </form>
 
           <form class="m-0 ms-1" action="excluir_agenda.php" method="POST">
-            <button type="submit" class="btn-del" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
+            <button type="submit" class="btn btn-danger btn-sm" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
           </form>
         </td>
       </tr>

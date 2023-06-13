@@ -40,11 +40,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
         margin-right: 40px;
       }
 
-      button a {
-        text-decoration: none;
-        color:white;
-      }
-
     </style>
     <title>Lista de Médicos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -66,10 +61,10 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
               <form action="valida_medico.php" method="POST">
                 <input type="hidden" id="id_medico_excluir" name="id" value="" />
 
-                <button type="submit" class="btn btn-danger" id="btnExcluir" name="btnExcluir" value="btnExcluir">Excluir</button>
+                <button type="submit" class="btn btn-danger btn-sm" id="btnExcluir" name="btnExcluir" value="btnExcluir">Excluir</button>
               </form>
 
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+              <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Voltar</button>
             </div>
           </div>
         </div>
@@ -107,13 +102,13 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
             <td><?= $medico['telefone'] ?></td>
             <td class="d-flex flex-row">
               <form class="m-0" action="alterar_medico.php" method="POST">
-                <button type="submit" class="btn btn-primary" name="id" id="id" value="<?= $medico['id'] ?>">Editar</button>
+                <button type="submit" class="btn btn-primary btn-sm" name="id" id="id" value="<?= $medico['id'] ?>">Editar</button>
               </form>
 
               <!-- <form class="m-0 ms-1" action="excluir_medico.php" method="POST">
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#excluirMedicoModal" name="id" id="id" value="<?= $medico['id'] ?>">Excluir</button>
                 -->
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#excluirMedicoModal" data-id="<?php echo $medico['id']; ?>" data-nome="<?php echo $medico['id']; ?>" name="id" id="id" value="<?= $medico['id'] ?>">Excluir</button>
+              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#excluirMedicoModal" data-id="<?php echo $medico['id']; ?>" data-nome="<?php echo $medico['id']; ?>" name="id" id="id" value="<?= $medico['id'] ?>">Excluir</button>
 
               <!-- </form> -->
             </td>

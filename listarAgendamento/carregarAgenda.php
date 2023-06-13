@@ -75,7 +75,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
     <div class="row">
         <div class="col">
         <form action="consultarAgendamento.php">
-            <button type="submit" class="btn btn-info" name="btnVoltar" id="btnVoltar" value="btnVoltar">Voltar</button>
+            <button type="submit" class="btn btn-primary btn-sm" name="btnVoltar" id="btnVoltar" value="btnVoltar">Voltar</button>
         </form>
         </div>
     </div>

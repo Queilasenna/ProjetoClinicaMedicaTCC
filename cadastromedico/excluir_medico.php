@@ -36,18 +36,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       text-align: center;
     }
 
-    .background {
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      z-index: -1000;
-      left: 0;
-      top: 0;
-      opacity: 0.1;
-      filter: blur(19px);
-      background-color: #fff;
-    }
-
     form {
       margin-left: 15px;
       margin-right: 40px;
@@ -86,9 +74,9 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
   <form action="valida_medico.php" method="POST">
     <input type="hidden" id="id" name="id" value="<?php echo $id ?>" />
 
-    <button type="submit" class="btn btn-danger" id="btnExcluir" name="btnExcluir" value="btnExcluir">Excluir</button>
+    <button type="submit" class="btn btn-danger btn-sm" id="btnExcluir" name="btnExcluir" value="btnExcluir">Excluir</button>
     <a href='index.php'>
-      <button type="button" class="btn btn-secondary">Voltar</button>
+      <button type="button" class="btn btn-secondary btn-sm">Voltar</button>
     </a>
   </form>
 

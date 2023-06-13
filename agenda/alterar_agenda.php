@@ -76,7 +76,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
             <div class="col">
                 <form action="processaAgenda.php" method="POST">
 
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="medico">Médico:</label>
                         <select class="form-control" id="medico" name="medico_id">
                             <option value="" disabled selected>Selecione o médico</option>
@@ -90,7 +90,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                         </select>
                     </div>
     <!-- ROLO DA ESPECIALIDADE PARA RESOLVER. CRIAR UM BANCO PRA ESPECIALIDADE ??? -->
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="Especialidade">Especialidade</label>
                         <select class="form-control" id="especialidade" name="especialidade">
                             <option value="" disabled selected></option>
@@ -105,17 +105,17 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                         <!-- <input type="Text" class="form-control" id="exampleInputEmail1" name="especialidade_id"> -->
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="exampleInputEmail1">Mês</label>
                         <input type="month" name="mes" class="form-control">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="exampleInputEmail1">Vagas</label>
                         <input type="Text" class="form-control" id="exampleInputEmail1" name="vagas">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Dias da semana de atendimento: </label>
 
                         <div class="d-flex justify-content-between align-items-center">
@@ -155,9 +155,9 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Criar</button>
                     <a href='index.php'>
-                        <button type="button" class="btn btn-secondary">Voltar</button>
+                        <button type="button" class="btn btn-secondary btn-sm">Voltar</button>
                 </form>
             </div>
 

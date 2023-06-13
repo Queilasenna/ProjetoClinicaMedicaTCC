@@ -105,12 +105,12 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
         </div> -->
      
         <div style="text-align: center;">
-            <button type="submit" class="btn btn-primary"
+            <button type="submit" class="btn btn-primary btn-sm"
               style="margin-top: 20px; background-color: #0f3e96;">Entrar</button>
             <form method="POST" action="#">
           </div>
           <div style="text-align: center;">
-            <button type="submit" class="btn btn-primary"
+            <button type="submit" class="btn btn-primary btn-sm"
               style="margin-top: 20px; background-color: #0f3e96;">Voltar</button>
             <form method="POST" action="#">
           </div>

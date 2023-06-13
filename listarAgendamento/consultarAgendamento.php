@@ -70,10 +70,10 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                     <label for="exampleInputEmail1">Data do Agendamento</label>
                     <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Data" name="data">
                 </div>
-                <button type="submit" class="btn btn-primary">Consultar</button>
+                <button type="submit" class="btn btn-primary btn-sm">Consultar</button>
 
                 <a href='index.php'>
-				<button type="button" class="btn btn-secondary">Voltar</button>
+				<button type="button" class="btn btn-secondary btn-sm">Voltar</button>
 			</a>
             </form>
         </div>

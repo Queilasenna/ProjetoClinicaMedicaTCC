@@ -38,7 +38,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 
             .btn-rel {
                 padding: 6px;
-                background-color: #007bff ;
+                background-color: #0f3e96 ;
                 color: white;
                 border-radius: 5px;
                 text-decoration: none;
@@ -50,18 +50,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
             }
 
 
-            .background {
-                width: 100vw;
-                height: 100vh;
-                position: fixed;
-                z-index: -1000;
-                left: 0;
-                top: 0;
-                opacity: 0.1;
-                filter: blur(19px);
-                background-color: #fff;
-            }
-
             form {
                 margin-left: 15px;
                 margin-right: 40px;
@@ -69,7 +57,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
             }
 
             .card-body {
-
                 text-align: center;
             }
         </style>
@@ -91,7 +78,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                         <div class="card-body">
                             <h5 class="card-title">Pacientes</h5>
                             <p class="card-text">
-                                <i class="fa fa-users" aria-hidden="true" style="font-size:48px; color:#007bff"></i>
+                                <i class="fa fa-users" aria-hidden="true" style="font-size:48px; color: #0f3e96"></i>
                             </p>
                             <a href="paciente/pacientes.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>
@@ -102,7 +89,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                         <div class="card-body">
                             <h5 class="card-title">Agendamentos</h5>
                             <p class="card-text">
-                                <i class="fa fa-address-book" aria-hidden="true" style="font-size:48px; color: #007bff"></i>
+                                <i class="fa fa-address-book" aria-hidden="true" style="font-size:48px; color:#0f3e96"></i>
                             </p>
                             <a href="agendamentos/agendamentos.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>
@@ -113,7 +100,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                         <div class="card-body">
                             <h5 class="card-title">Médicos</h5>
                             <p class="card-text">
-                                <i class="fa fa-user-md" aria-hidden="true" style="font-size:48px; color:#007bff"></i>
+                                <i class="fa fa-user-md" aria-hidden="true" style="font-size:48px; color:#0f3e96"></i>
                             </p>
                             <a href="medico/medicos.php" class="btn-rel" target="_blank">Gerar Relatório</a>
                         </div>

@@ -168,9 +168,9 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Criar</button>
+                    <button type="submit" class="btn btn-primary btn-sm">Criar</button>
                     <a href='index.php'>
-                        <button type="button" class="btn btn-secondary">Voltar</button>
+                        <button type="button" class="btn btn-secondary btn-sm">Voltar</button>
                 </form>
             </div>
 

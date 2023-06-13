@@ -176,7 +176,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 ?>
   <form action="valida_paciente.php" method="POST">
     <input type="hidden" id="id" name="id" value="<?php echo $id ?>" />
-    <div class="form-row">
+    <div class="row mb-2">
       <div class="form-group col-md-5">
         <label for="nome">Nome Completo</label>
         <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="<?php echo $nome ?>">
@@ -191,7 +191,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       </div>
     </div>
 
-    <div class="form-row">
+    <div class="row mb-2">
       <div class="form-group col-md-8">
         <label for="email">E-mail</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="" value="<?php echo $email ?>">
@@ -203,7 +203,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 
     </div>
 
-    <div class="form-row">
+    <div class="row mb-2">
 
     <div class="form-group col-md-2">
         <label for="inputCEP">CEP</label>
@@ -226,7 +226,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       
     </div>
     
-    <div class="form-row">
+    <div class="row mb-3">
       <div class="form-group col-md-6">
         <label for="inputCity">Cidade</label>
         <input type="text" class="form-control" name="cidade" id="cidade" value="<?php echo $cidade ?>">
@@ -274,9 +274,9 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
   
     </div>
 
-    <button type="submit" class="btn btn-primary" id="btnAtualiza" name="btnAtualiza"  value="btnAtualiza">Atualizar</button>
+    <button type="submit" class="btn btn-primary btn-sm" id="btnAtualiza" name="btnAtualiza"  value="btnAtualiza">Atualizar</button>
     <a href='index.php'>
-      <button type="button" class="btn btn-danger">Voltar</button>
+      <button type="button" class="btn btn-danger btn-sm">Voltar</button>
     </a>
   </form>
 

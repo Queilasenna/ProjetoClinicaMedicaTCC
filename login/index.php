@@ -39,9 +39,9 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
         z-index: -1000;
         left: 0;
         top: 0;
-        opacity: 0.4;
-        filter: blur(4px);
-        background-image: url('clinica.jpg');
+        opacity: 0.5;
+        /* filter: blur(3px); */
+        background-image: url('clinica7.jpg');
         background-size: cover;
         background-repeat: no-repeat;
       }
@@ -68,6 +68,15 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
         box-shadow: 0 0 16px 0px rgba(1, 1, 1, 0.33);
         border: 1px solid black;
       }
+
+      .container .box h3 {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        color: #0f3e96;
+        margin-bottom: 20px;
+      }
+
     </style>
 
 
@@ -87,6 +96,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
     <div class="container">
       <div class="box">
         <form action="valida.php" method="POST">
+          <h3>Login</h3>
           <div class="form-group">
             <label for="user">Usuário</label>
             <input type="text" id="usuario" name="usuario" placeholder="Insira seu Usuário" class="form-control" required>
@@ -101,15 +111,14 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div> -->
           <div style="text-align: center;">
-            <button type="submit" class="btn btn-primary"
-              style="margin-top: 20px; background-color: #0f3e96;">Entrar</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #0f3e96; margin-top:20px;">Entrar</button>
             <form method="POST" action="#">
           </div>
-          <div style="text-align: center;">
-            <button type="submit" class="btn btn-primary"
+          <!-- <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary btn-sm"
               style="margin-top: 20px; background-color: #0f3e96;">Cadastrar</button>
             <form method="POST" action="#">
-          </div>
+          </div> -->
 
 
           <?php
