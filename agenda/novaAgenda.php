@@ -73,10 +73,10 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
     <div class="bloco">
         <div class="row mb">
 
-            <div class="form-group mb-3">
+            <div class="form-group mb-2">
                 <form action="processaAgenda.php" method="POST">
 
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-2">
                         <label for="medico">Médico:</label>
                         <select class="form-control" id="medico" name="medico_id">
                             <option value="" disabled selected>Selecione o médico</option>
@@ -90,7 +90,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                         </select>
                     </div>
 
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-2">
                         <label>Especialidade:</label>
                         <select class="form-control" name="especialidade_id" id="especialidade_id">
                             <option value="">Todas</option>
@@ -118,17 +118,17 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                         <!-- <button type="button" class="limpaArea">Limpar</button> -->
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="exampleInputEmail1">Mês</label>
                         <input type="month" name="mes" class="form-control">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-2">
                         <label for="exampleInputEmail1">Vagas</label>
                         <input type="Text" class="form-control" id="exampleInputEmail1" name="vagas">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Dias da semana de atendimento: </label>
 
                         <div class="d-flex justify-content-between align-items-center">
