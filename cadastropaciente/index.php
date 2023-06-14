@@ -65,7 +65,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
                 <button type="submit" class="btn btn-danger btn-sm" id="btnExcluir" name="btnExcluir" value="btnExcluir">Excluir</button>
               </form>
 
-              <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Voltar</button>
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Voltar</button>
             </div>
           </div>
         </div>

@@ -23,7 +23,6 @@ if(!empty($btnInserir)){
   $numero = filter_input(INPUT_POST, 'numero');
   $cep = filter_input(INPUT_POST, 'cep');
   $crm = filter_input(INPUT_POST, 'crm');
-  $situacao = filter_input(INPUT_POST, 'situacao');
   $especialidade = filter_input(INPUT_POST, 'especialidade');
 
   $sql = "INSERT INTO medicos 
@@ -32,15 +31,14 @@ if(!empty($btnInserir)){
             nascimento,
             cpf, 
             email, 
-            telefone, 
+            telefone,
+            crm,
+            especialidade, 
             rua, 
             bairro, 
             cidade,
             numero, 
             estado,
-            crm,
-            situacao,
-            especialidade, 
             cep
           )
           VALUES (
@@ -50,7 +48,6 @@ if(!empty($btnInserir)){
             :email, 
             :telefone,
             :crm,
-            :situacao,
             :especialidade, 
             :rua, 
             :bairro, 
@@ -74,7 +71,6 @@ if(!empty($btnInserir)){
     ':numero' => $numero,  
     ':estado' => $estado,
     ':crm' => $crm,
-    ':situacao' => $situacao,
     ':especialidade' => $especialidade,
     ':cep' => $cep
   ]);
@@ -96,7 +92,6 @@ if(!empty($btnInserir)){
   $email = filter_input(INPUT_POST, 'email');
   $telefone = filter_input(INPUT_POST, 'tel');
   $crm = filter_input(INPUT_POST, 'crm');
-  $situacao = filter_input(INPUT_POST, 'situacao');
   $especialidade = filter_input(INPUT_POST, 'especialidade');
   $rua = filter_input(INPUT_POST, 'rua');
   $bairro = filter_input(INPUT_POST, 'bairro');
@@ -119,7 +114,6 @@ if(!empty($btnInserir)){
               cidade      = :cidade,
               numero      = :numero,
               crm         = :crm,
-              situacao    = :situacao,
               especialidade = :especialidade,
               estado      = :estado,  
               cep         = :cep
@@ -140,8 +134,7 @@ if(!empty($btnInserir)){
     ':numero' => $numero,  
     ':estado' => $estado,
     ':crm' => $crm,
-    ':especialidade' => $especialidade,
-    ':situacao' => $situacao, 
+    ':especialidade' => $especialidade, 
     ':cep' => $cep
   ]);
 
