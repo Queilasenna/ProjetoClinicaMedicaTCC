@@ -70,12 +70,12 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
     </div>
 
     <div class="row mb-3">
-      <div class="form-group col-md-3">
+      <div class="form-group col-md-4">
         <label for="email">E-mail</label>
         <input type="email" class="form-control" id="email" name="email" placeholder="">
       </div>
 
-      <div class="form-group col-md-2">
+      <div class="form-group col-md-3">
         <label for="tel">Telefone</label>
         <input type="tel" class="form-control" id="tel" name="tel" placeholder="">
       </div>
@@ -85,13 +85,7 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
         <input type="text" class="form-control" id="crm" name="crm" placeholder="">
       </div>
 
-      <div class="form-group col-md-2">
-        <label>Situação</label>
-        <select class="form-control" name="situacao" id="situacao" disabled>
-          <option value="A">Ativo</option>
-          <option value="I">Inativo</option>
-        </select>
-      </div>
+      
       <div class="form-group col-md-3">
         <label>Especialidade:</label>
         <select class="form-control" name="especialidade" id="especialidade">
