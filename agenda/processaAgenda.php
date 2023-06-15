@@ -43,4 +43,4 @@
 
     }
 
-    header('Location: /tcc/agenda/index.php');
+    header('Location: index.php');

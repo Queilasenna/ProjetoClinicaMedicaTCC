@@ -128,13 +128,30 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
           <!--<form class="m-0 ms-1" action="excluir_agenda.php" method="POST">
             <button type="submit" class="btn btn-danger btn-sm" name="id" id="id" value="<?= $agenda['idagenda'] ?>">Excluir</button>
           -->
-          <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#excluirAgendaModal" data-id="<?php echo $agenda['id']; ?>" data-nome="<?php echo $agenda['id']; ?>" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
+          <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#excluirAgendaModal" data-id="<?php echo $agenda['idagenda']; ?>" data-nome="<?php echo $agenda['idagenda']; ?>" name="id" id="id" value="<?= $agenda['idagenda'] ?>">Excluir</button>
 
           <!-- </form> -->
         </td>
       </tr>
     <?php } ?>
   </table>
+
+      <script type="text/javascript">
+      const modal = document.getElementById('excluirAgendaModal');
+
+      modal.addEventListener('show.bs.modal', event => {
+        let button = event.relatedTarget;
+        let id = button.getAttribute('data-id');
+
+        let campo = document.getElementById('id_agenda_excluir');
+        campo.value = id;
+      })
+
+      modal.addEventListener('hidden.bs.modal', event => {
+        let campo = document.getElementById('id_agenda_excluir');
+        campo.value = '';
+      })
+    </script>
 
   <!-- JavaScript (Opcional) -->
   <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
