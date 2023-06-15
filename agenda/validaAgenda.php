@@ -67,6 +67,7 @@ if(!empty($btnInserir)){
               agenda
             SET
               vagas           = :vagas,
+              dia             = :dia,
               mes             = :mes,
               ano             = :ano, 
               medico_id       = :medico_id, 
@@ -78,6 +79,7 @@ if(!empty($btnInserir)){
                         
   $resultado = $query->execute([
     ':vagas' => $vagas, 
+    ':dia'  => $dia,
     ':mes' => $mes,
     ':ano' => $ano, 
     ':medico_id' => $medico_id, 

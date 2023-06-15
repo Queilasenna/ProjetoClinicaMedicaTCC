@@ -50,6 +50,33 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
 <?php include("../templates/menu.php"); ?>
 
 <body>
+      <!-- Modal INICIO -->
+      <div class="modal fade" id="excluirAgendaModal" tabindex="-1" role="dialog" aria-labelledby="excluirAgendaModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="excluirAgendaModalLabel">Atenção:</h5>
+            </div>
+            <div class="modal-body"><b>Deseja realmente excluir o registro?</b></div>
+            <div class="modal-footer">
+              <form action="validaAgenda.php" method="POST">
+                <input type="hidden" id="id_agenda_excluir" name="id" value="" />
+
+                <button type="submit" class="btn btn-danger btn-sm" id="btnExcluir" name="btnExcluir" value="btnExcluir">Excluir</button>
+              </form>
+
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Voltar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal" id="<?php echo $seuid; ?>">
+        qualquer coisa
+      </div>
+
+      <!-- Modal FIM-->
+
   <!-- FINAL DO MENU AZUL -->
   <br>
   <h1>Agenda Medica</h1><br>
@@ -98,9 +125,12 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
             <button type="submit" class="btn btn-primary btn-sm" name="id" id="id" value="<?= $agenda['idagenda'] ?>">Editar</button>
           </form>
 
-          <form class="m-0 ms-1" action="excluir_agenda.php" method="POST">
+          <!--<form class="m-0 ms-1" action="excluir_agenda.php" method="POST">
             <button type="submit" class="btn btn-danger btn-sm" name="id" id="id" value="<?= $agenda['idagenda'] ?>">Excluir</button>
-          </form>
+          -->
+          <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#excluirAgendaModal" data-id="<?php echo $agenda['id']; ?>" data-nome="<?php echo $agenda['id']; ?>" name="id" id="id" value="<?= $agenda['id'] ?>">Excluir</button>
+
+          <!-- </form> -->
         </td>
       </tr>
     <?php } ?>
