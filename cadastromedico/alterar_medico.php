@@ -65,9 +65,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       $id = $item['id'];
       $nome = $item['nome'];
       $datanasc = $item['nascimento'];
-      //echo $datanasc . "<br>";
-      //echo date("d/m/Y",strtotime($datanasc));
-      //$datanasc = date("d/m/Y",strtotime($datanasc));
       $cpf =  $item['cpf'];
       $email =  $item['email'];
       $telefone =  $item['telefone'];
@@ -189,12 +186,12 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
       </div>
 
       <div class="row mb-3">
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-4">
           <label for="email">E-mail</label>
           <input type="email" class="form-control" id="email" name="email" placeholder="" value="<?php echo $email ?>">
         </div>
 
-        <div class="form-group col-md-2">
+        <div class="form-group col-md-3">
           <label for="tel">Telefone</label>
           <input type="tel" class="form-control" id="tel" name="tel" placeholder="" value="<?php echo $telefone ?>">
         </div>
@@ -204,13 +201,6 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
           <input type="text" class="form-control" id="crm" name="crm" placeholder="" value="<?php echo $crm ?>">
         </div>
 
-        <div class="form-group col-md-2">
-          <label>Situação</label>
-          <select class="form-control" name="situacao" id="situacao">
-            <option value="A">Ativo</option>
-            <option value="I">Inativo</option>
-          </select>
-        </div>
         <div class="form-group col-md-3">
           <label>Especialidade:</label>
           <select class="form-control" name="especialidade" id="especialidade">

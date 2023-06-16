@@ -30,13 +30,15 @@ if(!empty($btnInserir)){
             dataAgendamento,
             horaAgendamento,
             medico_id,
-            paciente_id
+            paciente_id,
+            especialidade
           )
           VALUES (
             :data,
             :hora,
             :medico_id,
-            :paciente_id
+            :paciente_id,
+            :especialidade
           )";
 
   $query = $pdo->prepare($sql);
@@ -45,7 +47,8 @@ if(!empty($btnInserir)){
     ':data' => $data, 
     ':hora' => $hora,
     ':medico_id' => $medico_id, 
-    ':paciente_id' => $paciente_id
+    ':paciente_id' => $paciente_id,
+    ':especialidade' => $especialidade_id
   ]);
 
   $id = $pdo->lastInsertId();
