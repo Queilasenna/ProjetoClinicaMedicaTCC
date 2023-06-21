@@ -1,3 +1,3 @@
 <?php
-$tempo_session = 360;
+$tempo_session = 500;
 ?>
