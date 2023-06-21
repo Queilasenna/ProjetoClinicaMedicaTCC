@@ -162,10 +162,10 @@ if (isset($_SESSION["time"]) and $_SESSION["time"] + $tempo_session < time()) {
             ?>
           </td>
           <td class="d-flex">
-            <form class="m-0" action="alterar_agenda.php" method="POST">
+           <!-- <form class="m-0" action="alterar_agenda.php" method="POST">
               <button type="submit" class="btn btn-primary btn-sm" name="id" id="id"
                 value="<?= $agenda['idagenda'] ?>">Editar</button>
-            </form>
+            </form> -->
 
             <!--<form class="m-0 ms-1" action="excluir_agenda.php" method="POST">
             <button type="submit" class="btn btn-danger btn-sm" name="id" id="id" value="<?= $agenda['idagenda'] ?>">Excluir</button>
